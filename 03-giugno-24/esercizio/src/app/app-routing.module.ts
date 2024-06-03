@@ -20,7 +20,7 @@ const routes: Route[] = [
   },
   {
     path: '',
-    component: HomepageComponent,
+    loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
   },
 ];
 
