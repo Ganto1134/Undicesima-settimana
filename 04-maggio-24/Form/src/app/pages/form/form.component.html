@@ -1,0 +1,106 @@
+<div class="container">
+  <h1>Inserisci i tuoi dati</h1>
+  <form [formGroup]="form">
+    <div class="form-row row">
+      <div class="form-group col-12 fw-bold p-0">
+        Name
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci il nome"
+          formControlName="name"
+        />
+      </div>
+      <span *ngIf="isValid('name')" class="alert alert-danger"
+        >Campo obbligatorio</span
+      >
+      <div class="form-group col-12 p-0 fw-bold">
+        Cognome
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci il cognome"
+          formControlName="cognome"
+        />
+      </div>
+      <span *ngIf="isValid('cognome')" class="alert alert-danger"
+        >Campo obbligatorio</span
+      >
+      <div class="form-group col-12 p-0 fw-bold">
+        Password
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci la Password"
+          formControlName="password"
+        />
+      </div>
+      <span *ngIf="isValid('password')" class="alert alert-danger"
+        >Campo obbligatorio</span
+      >
+      <div class="form-group col-12 p-0 fw-bold">
+        Conferma Password
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci nuovamente la Password"
+          formControlName="password"
+        />
+      </div>
+      <span *ngIf="isValid('password')" class="alert alert-danger"
+        >Campo obbligatorio</span
+      >
+      <div class="form-group col-12 p-0 fw-bold">
+        Genere
+        <select class="form-control" formControlName="genere">
+          <option value="">--Scegli il tuo genere--</option>
+          <option value="invisible">Male</option>
+          <option value="fast">Feamle</option>
+          <option value="fly">Non binary</option>
+          <option value="fly">Other</option>
+        </select>
+      </div>
+      <span *ngIf="isValid('genere')" class="alert alert-danger"
+        >Campo obbligatorio</span
+      >
+      <div class="form-group col-12 p-0 fw-bold">
+        Immagine profilo
+        <input
+          type="file"
+          class="form-control"
+          placeholder="Inserisci una tua foto"
+          formControlName="foto"
+        />
+      </div>
+      <div class="form-group col-12 p-0 fw-bold">
+        Biografia
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci la tua biografia"
+          formControlName="biografia"
+        />
+      </div>
+      <span *ngIf="isValid('biografia')" class="alert alert-danger"
+        >Campo obbligatorio, minimo 20 caratteri</span
+      >
+      <div class="form-group col-12 p-0 fw-bold">
+        Username
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserisci il tuo username"
+          formControlName="username"
+        />
+      </div>
+
+      <button
+        [disabled]="form.invalid"
+        class="btn btn-primary w-100 col-12"
+        (click)="invia()"
+      >
+        Crea
+      </button>
+    </div>
+  </form>
+</div>
