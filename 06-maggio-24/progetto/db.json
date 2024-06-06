@@ -1,0 +1,22 @@
+{
+  "pizze":[
+    {
+      "id":1,
+      "gusto": "margherita",
+      "prezzo":5,
+      "disponibile":true
+    }
+  ],
+  "pizze-preferite":[
+    {
+    "pizza":{
+      "id":1,
+      "gusto": "margherita",
+      "prezzo":5,
+      "disponibile":true
+    },
+    "id":1,
+    "userId":1
+  }
+]
+}
